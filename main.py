@@ -1,7 +1,3 @@
-from math import *
-import random
-
-
 def task_1():
     count = int(input("Number: "))
 
@@ -104,71 +100,72 @@ def fibonnaci():
 
 # fibonnaci()
 
-# def task_7():
-#     user_input = str(input("String: "))
-#
-#     index = 0
-#
-#     result = None
-#
-#     while index < len(user_input):
-#         result = user_input[::-1]
-#         index += 1
-#
-#     print(result)
-#
-#
-# # task_7()
-#
-#
-# def task_8():
-#     user_input = int(input("Numbers: "))
-#     user_input = str(user_input)
-#
-#     index = 0
-#     dauletsuper = []
-#
-#     while index < len(user_input):
-#         superdaulet = int(user_input[index])
-#         if superdaulet % 2 != 0:
-#             dauletsuper.append(superdaulet)
-#             index += 1
-#         else:
-#             index += 1
-#             continue
-#
-#     print(sum(dauletsuper))
-#
-#
-# # task_8()
-#
-# def task_9():
-#     import random
-#
-#     numbers = [int(x) for x in range(1, 101)]
-#     random_element = random.choice(numbers)
-#
-#     while True:
-#         user_choice = int(input("Введите число: "))
-#
-#         if user_choice < random_element:
-#             hint = random_element - user_choice
-#             if hint >= 25:
-#                 print("Слишком маленькое число.")
-#             else:
-#                 print("Не слишком маленькое число.")
-#
-#         elif user_choice > random_element:
-#             hint = user_choice - random_element
-#             if hint >= 25:
-#                 print("Слишком большое число!")
-#             else:
-#                 print("Не слишком большое число!")
-#
-#         else:
-#             print("Поздравляю! Вы угадали число!")
-#             break
-#
+def task_7():
+    user_input = str(input("String: "))
+
+    index = 0
+
+    result = None
+
+    while index < len(user_input):
+        result = user_input[::-1]
+        index += 1
+
+    print(result)
+
+
+# task_7()
+
+
+def task_8():
+    user_input = int(input("Numbers: "))
+    user_input = str(user_input)
+
+    index = 0
+    dauletsuper = []
+
+    while index < len(user_input):
+        superdaulet = int(user_input[index])
+        if superdaulet % 2 != 0:
+            dauletsuper.append(superdaulet)
+            index += 1
+        else:
+            index += 1
+            continue
+
+    print(sum(dauletsuper))
+
+
+# task_8()
+
+def task_9():
+    import random
+
+    numbers = [int(x) for x in range(1, 101)]
+    random_element = random.choice(numbers)
+
+    while True:
+        user_choice = int(input("Number: "))
+
+        if user_choice < random_element:
+            hint = random_element - user_choice
+            if hint >= 25:
+                print("Слишком маленькое число.")
+            else:
+                print("Не слишком маленькое число.")
+
+        elif user_choice > random_element:
+            hint = user_choice - random_element
+            if hint >= 25:
+                print("Слишком большое число!")
+            else:
+                print("Не слишком большое число!")
+
+        else:
+            print("Поздравляю! Вы угадали число!")
+            break
+
+
 # task_9()
 
 
@@ -186,7 +183,7 @@ def task_10():
             break
 
 
-task_10()
+# task_10()
 
 
 def task_11():
@@ -195,9 +192,112 @@ def task_11():
 
     n = 0
 
-    while True:
-        if user_input_y == 0:
-            print("1")
-            break
+    if user_input_y == 0:
+        print("1")
+        return None
 
-        if user_input_y >
+    while n < user_input_y:
+        n += 1
+        result = user_input_x ** n
+        print(f'Power: {n} - {result}')
+
+
+# task_11()
+
+def task_12():
+    def simple_number(n):
+        for i in range(2, n + 1):
+            if n == i:
+                return True
+            elif n % i == 0:
+                return False
+        return True
+
+    result = []
+    i = 3
+
+    dauletsuper = int(input("Nubmer: "))
+
+    while i < dauletsuper:
+        i += 2
+        if simple_number(i):
+            result.append(i)
+            print(i)
+
+
+# task_12()
+
+def task_13():
+    user_input = int(input("String: "))
+    user_input = str(user_input)
+    index = 0
+
+    result = None
+
+    while index < len(user_input):
+        result = user_input[::-1]
+        index += 1
+
+    print(result)
+
+
+# task_13()
+
+def task_14():
+    def simple_number_check(n):
+        for i in range(2, n + 1):
+            if n == i:
+                return True
+            elif n % i == 0:
+                return False
+        return True
+
+    user_input = int(input("Number: "))
+    dauletsuper = user_input
+
+    if not simple_number_check(user_input):
+        if dauletsuper % 2 == 0:
+            dauletsuper += 1
+        else:
+            dauletsuper += 2
+
+    while True:
+        if simple_number_check(dauletsuper):
+            print(dauletsuper)
+            break
+        dauletsuper += 2
+
+
+# task_14()
+
+
+def task_15():
+    user_string = str(input("String: "))
+    user_input = int(input("Number: "))
+
+    if user_string[0].isupper():
+        user_string = user_string[0].lower() + user_string[1:]
+
+    alphabet_dict = {}
+    chishr = []
+
+    for i, letter in enumerate('abcdefghijklmnopqrstuvwxyz', 1):
+        alphabet_dict[letter] = i
+
+    while True:
+        for j in user_string:
+            index = 0
+            index = alphabet_dict[j]
+            index += user_input
+            if index > 26:
+                index -= 26
+            for key, value in alphabet_dict.items():
+                if index == value:
+                    chishr += key
+                    break
+        break
+    for i in range(len(chishr)):
+        print(chishr[i], end="")
+
+
+task_15()
