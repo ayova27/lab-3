@@ -91,70 +91,113 @@ def task_5():
 
 # task_5()
 
-def task_6():
-    user_input = str(input("String: "))
 
-    index = 0
-
-    result = None
-
-    while index < len(user_input):
-        result = user_input[::-1]
-        index += 1
-
-    print(result)
-
-
-# task_6()
-
-
-def task_7():
-    user_input = int(input("Numbers: "))
-    user_input = str(user_input)
-
-    index = 0
+def fibonnaci():
+    f1, f2 = 0, 1
+    user_input = int(input("Number: "))
     dauletsuper = []
 
-    while index < len(user_input):
-        superdaulet = int(user_input[index])
-        if superdaulet % 2 != 0:
-            dauletsuper.append(superdaulet)
-            index += 1
+    while user_input > f2:
+        f1, f2 = f2, f1 + f2
+        print(f2)
+
+
+# fibonnaci()
+
+# def task_7():
+#     user_input = str(input("String: "))
+#
+#     index = 0
+#
+#     result = None
+#
+#     while index < len(user_input):
+#         result = user_input[::-1]
+#         index += 1
+#
+#     print(result)
+#
+#
+# # task_7()
+#
+#
+# def task_8():
+#     user_input = int(input("Numbers: "))
+#     user_input = str(user_input)
+#
+#     index = 0
+#     dauletsuper = []
+#
+#     while index < len(user_input):
+#         superdaulet = int(user_input[index])
+#         if superdaulet % 2 != 0:
+#             dauletsuper.append(superdaulet)
+#             index += 1
+#         else:
+#             index += 1
+#             continue
+#
+#     print(sum(dauletsuper))
+#
+#
+# # task_8()
+#
+# def task_9():
+#     import random
+#
+#     numbers = [int(x) for x in range(1, 101)]
+#     random_element = random.choice(numbers)
+#
+#     while True:
+#         user_choice = int(input("Введите число: "))
+#
+#         if user_choice < random_element:
+#             hint = random_element - user_choice
+#             if hint >= 25:
+#                 print("Слишком маленькое число.")
+#             else:
+#                 print("Не слишком маленькое число.")
+#
+#         elif user_choice > random_element:
+#             hint = user_choice - random_element
+#             if hint >= 25:
+#                 print("Слишком большое число!")
+#             else:
+#                 print("Не слишком большое число!")
+#
+#         else:
+#             print("Поздравляю! Вы угадали число!")
+#             break
+#
+# task_9()
+
+
+def task_10():
+    user_input = str(input("String: "))
+
+    while True:
+        dauletsuper = user_input[::-1]
+
+        if dauletsuper == user_input:
+            print("Yeah, sonofabitch!")
+            break
         else:
-            index += 1
-            continue
-
-    print(sum(dauletsuper))
+            print("daulet super!")
+            break
 
 
-# task_7()
+task_10()
 
-def task_8():
-    import random
 
-    def task_8():
-        numbers = [int(x) for x in range(1, 101)]
-        random_element = random.choice(numbers)
+def task_11():
+    user_input_x = int(input("X: "))
+    user_input_y = int(input("Y: "))
 
-        while True:
-            user_choice = int(input("Введите число: "))
+    n = 0
 
-            if user_choice < random_element:
-                hint = random_element - user_choice
-                if hint >= 25:
-                    print("Слишком маленькое число.")
-                else:
-                    print("Не слишком маленькое число.")
+    while True:
+        if user_input_y == 0:
+            print("1")
+            break
 
-            elif user_choice > random_element:
-                hint = user_choice - random_element
-                if hint >= 25:
-                    print("Слишком большое число!")
-                else:
-                    print("Не слишком большое число!")
-
-            else:
-                print("Поздравляю! Вы угадали число!")
-                break
-    task_8()
-task_8()
+        
